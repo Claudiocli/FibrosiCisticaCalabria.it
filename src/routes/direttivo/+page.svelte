@@ -130,7 +130,8 @@
 	span.separator	{
 		border: 29px solid #016bb7;
 		position: absolute;
-		height: 100vmax;
+		top: 15vh;
+		height: 110vmax;
 		left: calc(50% - 30px);
 	}
 	span.content	{

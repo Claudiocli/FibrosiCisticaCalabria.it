@@ -16,12 +16,15 @@
 	}
 	:global(body)	{
 		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
 	}
 	p.social	{
 		cursor: default;
 
-		position: fixed;
-		right: 3em;
+		position: relative;
+		left: 74vw;
+
 		text-align: center;
 		align-self: center;
 	}
@@ -36,6 +39,9 @@
 
 		display: flex;
 		flex-flow: row;
+		
+		width: 100%;
+		bottom: 0;
 	}
 	div.container a, p	{
 		color: #fff;

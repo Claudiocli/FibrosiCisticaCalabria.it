@@ -5,10 +5,10 @@ let mysqlConnection = null;
 export function openMysqlConnection()	{
 	if (!mysqlConnection)	{
 		mysqlConnection = mysql.createConnection({
-			host: 'myhost',
-			user: 'root',
-			password: 'mypassword',
-			database: 'mydatabase'
+			host: '62.149.150.230',
+			user: 'Sql831063',
+			// password: 'mypassword',
+			database: 'Sql831063_2'
 		});
 	}
 	return mysqlConnection;

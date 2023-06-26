@@ -1,6 +1,6 @@
 <form method="post" action="?/login">
 	<label>
-		Email
+		Username
 		<input name="username" type="text">
 	</label>
 	<label>
@@ -9,3 +9,10 @@
 	</label>
 	<button type="submit">Log in</button>
 </form>
+<style>
+	form	{
+		text-align: center;
+		margin: 4vh;
+		margin-bottom: 60vh;
+	}
+</style>

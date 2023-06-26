@@ -25,12 +25,13 @@
 		position: absolute;
 		max-height: 5em;
 		top: 2.2em;
-		left: 6em;
+		left: 5em;
 	}
 	div.container	{
 		background: #016bb7;
 		margin: 0 auto;
 		padding: 4em 3em;
+		width: 100%;
 		text-align: center;
 	}
 	
