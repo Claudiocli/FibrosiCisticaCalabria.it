@@ -20,7 +20,7 @@ function text_preview() {
 
 <div id="editor-wrapper">
 	<h3>Nuovo Post</h3>
-	<form method="post">
+	<form method="post" action="?/createNewPost">
 		<div class="wrapper-e-p">
 			<textarea bind:value={editor_text} name="new_post" id="new-post" required cols="100" rows="30" on:input={text_preview}></textarea>
 			<div id="preview">
