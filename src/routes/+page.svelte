@@ -1,42 +1,49 @@
 <script>
-	// TODO: get all news from db
-	const news = [
-		{
-			title: 'News1',
-			content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus. Fermentum et sollicitudin ac orci phasellus egestas tellus. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Ut consequat semper viverra nam libero justo laoreet sit amet. Ornare quam viverra orci sagittis eu volutpat odio. Consectetur lorem donec massa sapien faucibus et molestie. Ipsum consequat nisl vel pretium lectus quam. Leo vel orci porta non pulvinar neque. Sed arcu non odio euismod lacinia at. Euismod quis viverra nibh cras pulvinar. Urna et pharetra pharetra massa massa ultricies mi quis hendrerit. Consequat interdum varius sit amet mattis vulputate. Etiam sit amet nisl purus in. Congue quisque egestas diam in arcu. Nunc sed id semper risus in hendrerit gravida rutrum. Porttitor eget dolor morbi non arcu risus. Varius quam quisque id diam vel quam. Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi.Mattis aliquam faucibus purus in massa tempor nec feugiat nisl. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Neque egestas congue quisque egestas diam in arcu cursus euismod. Quam id leo in vitae turpis. Sollicitudin aliquam ultrices sagittis orci. Cursus mattis molestie a iaculis. Nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sed velit dignissim sodales ut eu sem integer vitae. Morbi tincidunt augue interdum velit euismod. Lectus urna duis convallis convallis tellus id interdum.Orci phasellus egestas tellus rutrum tellus pellentesque. Eget velit aliquet sagittis id consectetur purus ut. Blandit libero volutpat sed cras ornare arcu dui vivamus. Facilisi etiam dignissim diam quis. At urna condimentum mattis pellentesque id nibh tortor id aliquet. Lorem ipsum dolor sit amet. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Elit at imperdiet dui accumsan. Eget est lorem ipsum dolor sit. Dictum sit amet justo donec enim diam vulputate ut. Donec massa sapien faucibus et molestie ac feugiat.Sit amet luctus venenatis lectus magna fringilla. Eu sem integer vitae justo eget. Hac habitasse platea dictumst vestibulum rhoncus. Sodales ut etiam sit amet. Volutpat sed cras ornare arcu dui. Nunc mi ipsum faucibus vitae aliquet. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Quam viverra orci sagittis eu. Quis auctor elit sed vulputate mi sit. Faucibus a pellentesque sit amet. Amet risus nullam eget felis eget. Sapien et ligula ullamcorper malesuada proin libero. Integer eget aliquet nibh praesent tristique magna sit amet.Etiam tempor orci eu lobortis elementum nibh tellus molestie nunc. Lectus vestibulum mattis ullamcorper velit. Sit amet aliquam id diam maecenas ultricies mi eget. Turpis nunc eget lorem dolor sed viverra ipsum. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Consectetur lorem donec massa sapien. Lorem donec massa sapien faucibus et molestie ac. Dignissim suspendisse in est ante in nibh. Neque laoreet suspendisse interdum consectetur libero id faucibus. Integer enim neque volutpat ac tincidunt vitae semper quis lectus.Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Integer enim neque volutpat ac tincidunt vitae semper quis. Volutpat commodo sed egestas egestas fringilla. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere. Risus feugiat in ante metus dictum at tempor. Vulputate mi sit amet mauris commodo. Neque sodales ut etiam sit amet nisl purus in mollis. Nulla facilisi cras fermentum odio eu. Pellentesque dignissim enim sit amet. Mi bibendum neque egestas congue quisque egestas diam. Ut tortor pretium viverra suspendisse potenti.Duis ut diam quam nulla porttitor massa. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Massa tincidunt nunc pulvinar sapien et. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. At varius vel pharetra vel turpis nunc. Feugiat in ante metus dictum at tempor commodo ullamcorper. Augue eget arcu dictum varius duis at consectetur lorem. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Nunc sed augue lacus viverra. Sed vulputate mi sit amet mauris commodo quis. Pulvinar pellentesque habitant morbi tristique. Interdum varius sit amet mattis vulputate. Nisl nunc mi ipsum faucibus vitae aliquet nec. Integer enim neque volutpat ac.Neque laoreet suspendisse interdum consectetur. Aenean pharetra magna ac placerat. Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Ut diam quam nulla porttitor massa. Pretium lectus quam id leo. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Faucibus a pellentesque sit amet porttitor eget dolor. Et egestas quis ipsum suspendisse ultrices gravida. Non blandit massa enim nec dui nunc mattis enim. Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Facilisis leo vel fringilla est. Consequat interdum varius sit amet mattis. Volutpat blandit aliquam etiam erat velit. Cursus euismod quis viverra nibh cras pulvinar mattis nunc.',
-			url: '/',
-		},
-		{
-			title: 'News2',
-			content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus faucibus ornare suspendisse sed nisi lacus. Fermentum et sollicitudin ac orci phasellus egestas tellus. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Ut consequat semper viverra nam libero justo laoreet sit amet. Ornare quam viverra orci sagittis eu volutpat odio. Consectetur lorem donec massa sapien faucibus et molestie. Ipsum consequat nisl vel pretium lectus quam. Leo vel orci porta non pulvinar neque. Sed arcu non odio euismod lacinia at. Euismod quis viverra nibh cras pulvinar. Urna et pharetra pharetra massa massa ultricies mi quis hendrerit. Consequat interdum varius sit amet mattis vulputate. Etiam sit amet nisl purus in. Congue quisque egestas diam in arcu. Nunc sed id semper risus in hendrerit gravida rutrum. Porttitor eget dolor morbi non arcu risus. Varius quam quisque id diam vel quam. Sed vulputate odio ut enim blandit volutpat maecenas volutpat. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi.Mattis aliquam faucibus purus in massa tempor nec feugiat nisl. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Neque egestas congue quisque egestas diam in arcu cursus euismod. Quam id leo in vitae turpis. Sollicitudin aliquam ultrices sagittis orci. Cursus mattis molestie a iaculis. Nulla porttitor massa id neque aliquam vestibulum morbi blandit. Sed velit dignissim sodales ut eu sem integer vitae. Morbi tincidunt augue interdum velit euismod. Lectus urna duis convallis convallis tellus id interdum.Orci phasellus egestas tellus rutrum tellus pellentesque. Eget velit aliquet sagittis id consectetur purus ut. Blandit libero volutpat sed cras ornare arcu dui vivamus. Facilisi etiam dignissim diam quis. At urna condimentum mattis pellentesque id nibh tortor id aliquet. Lorem ipsum dolor sit amet. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Elit at imperdiet dui accumsan. Eget est lorem ipsum dolor sit. Dictum sit amet justo donec enim diam vulputate ut. Donec massa sapien faucibus et molestie ac feugiat.Sit amet luctus venenatis lectus magna fringilla. Eu sem integer vitae justo eget. Hac habitasse platea dictumst vestibulum rhoncus. Sodales ut etiam sit amet. Volutpat sed cras ornare arcu dui. Nunc mi ipsum faucibus vitae aliquet. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Quam viverra orci sagittis eu. Quis auctor elit sed vulputate mi sit. Faucibus a pellentesque sit amet. Amet risus nullam eget felis eget. Sapien et ligula ullamcorper malesuada proin libero. Integer eget aliquet nibh praesent tristique magna sit amet.Etiam tempor orci eu lobortis elementum nibh tellus molestie nunc. Lectus vestibulum mattis ullamcorper velit. Sit amet aliquam id diam maecenas ultricies mi eget. Turpis nunc eget lorem dolor sed viverra ipsum. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Consectetur lorem donec massa sapien. Lorem donec massa sapien faucibus et molestie ac. Dignissim suspendisse in est ante in nibh. Neque laoreet suspendisse interdum consectetur libero id faucibus. Integer enim neque volutpat ac tincidunt vitae semper quis lectus.Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Integer enim neque volutpat ac tincidunt vitae semper quis. Volutpat commodo sed egestas egestas fringilla. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere. Risus feugiat in ante metus dictum at tempor. Vulputate mi sit amet mauris commodo. Neque sodales ut etiam sit amet nisl purus in mollis. Nulla facilisi cras fermentum odio eu. Pellentesque dignissim enim sit amet. Mi bibendum neque egestas congue quisque egestas diam. Ut tortor pretium viverra suspendisse potenti.Duis ut diam quam nulla porttitor massa. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Massa tincidunt nunc pulvinar sapien et. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. At varius vel pharetra vel turpis nunc. Feugiat in ante metus dictum at tempor commodo ullamcorper. Augue eget arcu dictum varius duis at consectetur lorem. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Nunc sed augue lacus viverra. Sed vulputate mi sit amet mauris commodo quis. Pulvinar pellentesque habitant morbi tristique. Interdum varius sit amet mattis vulputate. Nisl nunc mi ipsum faucibus vitae aliquet nec. Integer enim neque volutpat ac.Neque laoreet suspendisse interdum consectetur. Aenean pharetra magna ac placerat. Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Ut diam quam nulla porttitor massa. Pretium lectus quam id leo. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Faucibus a pellentesque sit amet porttitor eget dolor. Et egestas quis ipsum suspendisse ultrices gravida. Non blandit massa enim nec dui nunc mattis enim. Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Facilisis leo vel fringilla est. Consequat interdum varius sit amet mattis. Volutpat blandit aliquam etiam erat velit. Cursus euismod quis viverra nibh cras pulvinar mattis nunc.',
-			url: '/',
-		},
-			
-	];
+// @ts-nocheck
+	import { onMount } from 'svelte';
+	import { getAllNews } from './api/data';
+
+	let news = [];
+	let error = null;
+
+	async function fetchNews() {
+		try {
+			news = await getAllNews;
+		} catch (err) {
+			// console.error('Errore durante il recupero delle news:', err.message);
+			error = err.message;
+		}
+	}
+
+	onMount(fetchNews);
 </script>
 
-{#each news as n}
-	<a href="{n.url}">
-		<div class="news-container">
-			<h4 class="news-title">{n.title}</h4>
-			<p class="news-content">{n.content}</p>
-		</div>
-	</a>
-{/each}
+{#if error}
+	<p>{error}</p>
+{:else}
+	{#each news as n}
+		<a href={'/news/' + n.id}>
+			<div class="news-container">
+				<h4 class="news-title">{n.title}</h4>
+				<p class="news-content">{n.content}</p>
+			</div>
+		</a>
+	{/each}
+{/if}
 
 <style>
-	.news-container	{
+	.news-container {
 		margin-left: 5em;
 		margin-right: 5em;
-		margin-top: .8em;
-		margin-bottom: .8em;
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
 
-		padding: .5em;
-		
+		padding: 0.5em;
+
 		border: 2px solid #016bb7;
 		border-radius: 24px;
 	}
-	.news-content	{
+	.news-content {
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
@@ -44,13 +51,13 @@
 		width: 100%;
 		height: 20px;
 	}
-	a	{
+	a {
 		text-decoration: none;
 	}
-	a:visited	{
+	a:visited {
 		color: #000;
 	}
-	.news-title	{
-		color: #272f5f
+	.news-title {
+		color: #272f5f;
 	}
 </style>

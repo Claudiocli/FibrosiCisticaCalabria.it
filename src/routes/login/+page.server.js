@@ -1,5 +1,7 @@
 import { scrypt, randomBytes, timingSafeEqual } from 'crypto';
 import { promisify } from 'util';
+import { getUser } from '../api/data.js';
+import { error, redirect } from '@sveltejs/kit';
 
 const scryptAsync = promisify(scrypt);
 
@@ -23,17 +25,17 @@ export const actions = {
 		const data = await request.formData();
 
 		const username = data.get('username');
-		const pwd = hash(data.get('password')?.toString());
+		const password = await hash(data.get('password')?.toString());
 
-		// TODO: get username and pwd from db
-		// const uname_db;
-		// const pwd_db;
+		const user = getUser(username);
 
-		// if (compare(pwd_db, pwd))	{
-		// 	// Pwd match
-		// } else {
-		// 	// Error
-			
-		// }
+		if (user && await compare(user.password, password))	{
+			const uuid = crypto.randomUUID();
+			cookies.set('userid', uuid, {path: '/login', httpOnly: true, maxAge: 60 * 60 * 24});
+			// TODO: associate uuid on db with user
+			throw redirect(302, '/a3ad1680-c9fd-475b-b38e-f2e5bcbb750b');
+		} else {
+			throw error(401, 'Not logged in');
+		}
 	}
 };
