@@ -1,18 +1,25 @@
 <script>
 // @ts-nocheck
 	import { onMount } from 'svelte';
-	import { getAllNews } from './api/data';
+	import { captureException, withScope } from '@sentry/sveltekit';
 
 	let news = [];
 	let error = null;
 
 	async function fetchNews() {
-		try {
-			news = await getAllNews;
-		} catch (err) {
-			// console.error('Errore durante il recupero delle news:', err.message);
+		await fetch('/api/news', {
+			method: 'get'
+		})
+		.then((response) => {
+			news = response.body;
+		})
+		.catch((err) => {
+			withScope((scope) => {
+				scope.setLevel('warning');
+				captureException(err);
+			});
 			error = err.message;
-		}
+		});
 	}
 
 	onMount(fetchNews);

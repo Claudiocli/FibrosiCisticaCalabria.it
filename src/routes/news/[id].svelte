@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { getNewsById } from '../api/data';
 	import { useParams } from 'svelte-navigator';
+	import { captureException, withScope } from '@sentry/sveltekit';
 
 	/**
-	 * @type {{ Title: string; Content: string; ID: number; CreationDate: string; } | null}
+	 * @type {any | null}
 	 */
 	let news = null;
 
@@ -25,12 +25,20 @@
 	 * @param {string} id
 	 */
 	async function fetchNewsById(id) {
-		try {
-			news = await getNewsById(id);
-		} catch (err) {
-			// Error handled with svelte
+		await fetch(`/api/news/${id}`, {
+			method: 'get'
+		})
+		.then((response) => {
+			news = response.body;
+		})
+		.catch((err) => {
+			withScope((scope) => {
+				scope.setLevel('warning');
+				captureException(err);
+			});
+			// Error handled with svelte when `news == null`
 			news = null;
-		}
+		});
 	}
 
 	/**
