@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 	import { onMount } from 'svelte';
 	import { captureException, withScope } from '@sentry/sveltekit';
 
@@ -7,19 +7,25 @@
 	let error = null;
 
 	async function fetchNews() {
-		await fetch('/api/news', {
-			method: 'get'
-		})
-		.then((response) => {
-			news = response.body;
-		})
-		.catch((err) => {
+		try {
+			const response = await fetch('/api/news', {
+				method: 'get'
+			});
+
+			if (response.ok) {
+				const data = await response.json();
+				news = data.news || []; // Assegna un array vuoto come fallback se non sono presenti notizie
+				error = null;
+			} else {
+				error = `Error: ${response.status} ${response.statusText}`;
+			}
+		} catch (err) {
 			withScope((scope) => {
 				scope.setLevel('warning');
 				captureException(err);
 			});
 			error = err.message;
-		});
+		}
 	}
 
 	onMount(fetchNews);

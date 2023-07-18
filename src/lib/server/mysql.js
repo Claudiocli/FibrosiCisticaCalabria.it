@@ -1,27 +1,29 @@
 import { captureException, captureMessage } from '@sentry/sveltekit';
 import mysql from 'mysql2/promise';
-import { env } from '$env/dynamic/private';
 
 let mysqlConnection = null;
 
 export function openMysqlConnection()	{
-	if (!mysqlConnection)	{
-		try {
-			captureMessage('Creating new mysql connection');
-			mysqlConnection = mysql.createConnection({
-				host:  env.DB_HOST,
-				user: env.DB_USER,
-				port: env.DB_PORT,
-				password: env.DB_PASSWORD,
-				database: env.DB,
-			});
-			captureMessage('New mysql connection created');
-		} catch (error) {
-			captureException(error);
-			throw new Error('Impossibile connettersi al database');
-		}
+	if (mysqlConnection)	{
+		captureMessage('Closing old mysql connection...');
+		mysqlConnection.end();
+		captureMessage('Mysql connection closed!');
 	} else {
-		captureMessage('Using old mysql connectino');
+		captureMessage('No mysql connection, attempting to create one...');
+	}
+	try {
+		captureMessage('Creating new mysql connection');
+		mysqlConnection = mysql.createConnection({
+			host:  import.meta.env.DB_HOST,
+			user: import.meta.env.DB_USER,
+			port: import.meta.env.DB_PORT,
+			password: import.meta.env.DB_PASSWORD,
+			database: import.meta.env.DB,
+		});
+		captureMessage('New mysql connection created');
+	} catch (error) {
+		captureException(error);
+		throw new Error('Impossibile connettersi al database');
 	}
 	return mysqlConnection;
 };
