@@ -28,7 +28,27 @@
 		}
 	}
 
-	onMount(fetchNews);
+	export async function load({ page, fetch }) {
+		try {
+			const news = await fetchNews();
+			return {
+				props: {
+					news: news || null
+				}
+			};
+		} catch (err) {
+			withScope((scope) => {
+				scope.setLevel('warning');
+				captureException(err);
+			});
+			return {
+				props: {
+					news: null,
+					error: err.message
+				}
+			};
+		}
+	}
 </script>
 
 {#if error}
