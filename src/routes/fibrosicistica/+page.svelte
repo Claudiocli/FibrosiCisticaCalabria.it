@@ -17,10 +17,7 @@
 		progressivo del tessuto polmonare, è la maggior causa di morbilità nei pazienti FC.
 		Le manifestazioni tipiche della malattia sono:
 	</p>
-	<video class="spot">
-		<source src="https://youtu.be/kWGrxZOAI-U">
-		<track default kind="captions">
-	</video>
+	<iframe class="spot" width="560" height="315" src="https://www.youtube-nocookie.com/embed/kWGrxZOAI-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 <ul>
 	<li>
@@ -172,16 +169,37 @@
 	em	{
 		color: #016bb7;
 	}
-	@media screen and (min-width: 800px)	{
+	@media screen and (min-width: 1000px)	{
 		p.intro	{
 			max-width: 40%;
 		}
-		video.spot	{
+		.spot	{
 			position: absolute;
 			right: 2.5%;
 			top: 35%;
-			// TODO: change image
-			background-color: green;
+		}
+	}
+	@media screen and (max-width: 1000px)	{
+		p.intro	{
+			max-width: 40%;
+		}
+		.spot	{
+			position: absolute;
+			right: 2.5%;
+			top: 45%;
+			width: 50vw;
+		}
+	}
+	@media screen and (max-width: 600px)	{
+		p.intro	{
+			max-width: 40%;
+		}
+		.spot	{
+			position: absolute;
+			right: 2.5%;
+			top: 75%;
+			width: 50vw;
+			height: 60vh;
 		}
 	}
 </style>

@@ -51,7 +51,32 @@
 	}
 </script>
 
-{#if error}
+<div class="news-placeholder-temp">
+	<h2>
+		News
+	</h2>
+	<p>Coming soon</p>
+	<h3>Resta aggiornato sui social della Lega Italiana Fibrosi Cistica Calabria</h3>
+	<table class="social">
+		<thead>
+			<tr>
+				<th><a href="https://www.facebook.com/fibrosicisticacalabria">Facebook</a></th>
+				<th><a href="https://www.instagram.com/legafibrosicisticacalabria/">Instagram</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<a href="https://www.facebook.com/fibrosicisticacalabria"><img alt="Facebook logo" src="/public/f_logo_RGB-Blue_1024.png" style="width: 4em; height: 4em"></a>
+				</td>
+				<td>
+					<a href="https://www.instagram.com/legafibrosicisticacalabria/"><img alt="Instagram logo" src="/public/Instagram_Glyph_Gradient.png" style="width: 4em; height: 4em"></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!-- {#if error}
 	<p>{error}</p>
 {:else}
 	{#each news as n}
@@ -62,9 +87,27 @@
 			</div>
 		</a>
 	{/each}
-{/if}
+{/if} -->
 
 <style>
+	.social	{
+	}
+	.news-placeholder-temp	{
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		height: calc(100vh - 35vh);
+	}
+	.news-placeholder-temp > p	{
+		animation: marquee 20s linear infinite;
+	}
+	.news-placeholder-temp:last-child	{
+		flex-grow: 1;
+	}
+	@keyframes marquee {
+		0% { transform: translate(100%,0); }
+		100% { transform: translate(-100%,0); }
+	}
 	.news-container {
 		margin-left: 5em;
 		margin-right: 5em;
