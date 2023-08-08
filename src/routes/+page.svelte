@@ -90,6 +90,9 @@
 {/if} -->
 
 <style>
+	:global(body)	{
+		overflow-x: hidden;
+	}
 	.social	{
 	}
 	.news-placeholder-temp	{
@@ -105,8 +108,8 @@
 		flex-grow: 1;
 	}
 	@keyframes marquee {
-		0% { transform: translate(100%,0); }
-		100% { transform: translate(-100%,0); }
+		0% { transform: translate(100vw,0); }
+		100% { transform: translate(-100vw,0); }
 	}
 	.news-container {
 		margin-left: 5em;

@@ -31,7 +31,8 @@
 		background: #016bb7;
 		margin: 0 auto;
 		padding: 4em 3em;
-		width: 100%;
+		padding-right: 1em;
+		width: 100vw;
 		text-align: center;
 	}
 	
