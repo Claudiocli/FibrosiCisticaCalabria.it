@@ -19,7 +19,7 @@ async function updateUUID(username, uuid) {
 	let mysqlConn = await openMysqlConnection();
 
 	try {
-		mysqlConn.execute('UPDATE `Users` SET `UUID` = ? WHERE Username = ?', [uuid, username]);
+		await mysqlConn.execute('UPDATE `Users` SET `UUID` = ? WHERE Username = ?', [uuid, username]);
 	} catch (err) {
 		captureException(new Error('Error while updating uuid'));
 		throw new Error('Si è verificato un errore tecnico nel log in');

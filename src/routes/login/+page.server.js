@@ -27,12 +27,14 @@ export const actions = {
 		const username = data.get('username');
 		const password = await hash(data.get('password')?.toString());
 
-		const user = (await fetch('/api/user', {
+		const user = await (await fetch('http://fibrosicisticacalabria.it/api/user', {
 			method: 'post',
 			body: JSON.stringify({username: username})
-		})).body;
+		})).json();
 
-		if (user && await compare(user.password, password)) {
+		console.log(user);
+
+		if (user  && await compare(user.password, password)) {
 			const uuid = crypto.randomUUID();
 
 			await fetch('/api/user', {
