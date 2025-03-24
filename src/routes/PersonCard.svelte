@@ -3,7 +3,7 @@
     export let role: string;
     export let image: string;
     export let description: string;
-    export let index: number; // Per gestire animazioni alternate
+    export let index: number;
 </script>
   
 <div class="box {index % 2 === 0 ? 'left' : 'right'}">
