@@ -1,6 +1,6 @@
 {
 	"name": "fibrosicisticacalabria.it",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -40,8 +40,8 @@
 		"@fortawesome/fontawesome-free": "^6.3.0",
 		"@sentry/sveltekit": "^7.57.0",
 		"@sveltejs/adapter-node": "^1.0.0-next.106",
-		"dotenv": "^16.3.1",
-		"mysql2": "^3.4.2",
+		"dotenv": "^16.4.7",
+		"fibrosicisticacalabria.it": "file:",
 		"prosemirror-example-setup": "^1.2.2",
 		"prosemirror-model": "^1.19.2",
 		"prosemirror-schema-basic": "^1.2.2",

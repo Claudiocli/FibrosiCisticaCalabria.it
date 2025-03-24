@@ -30,6 +30,9 @@
 </div>
 
 <style lang="scss">
+	.info-lfcc-container	{
+		min-height: calc(100vh - 29.2vh);
+	}
 	p {
 		font-family: Nunito;
 		margin-top: 2em;

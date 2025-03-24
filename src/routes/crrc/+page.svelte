@@ -35,6 +35,7 @@
 		background-color: azure;
 		display: flex;
 		flex-flow: row;
+		height: calc(100vh - 29.2vh);
 		gap: 10vw;
 	}
 	#info	{

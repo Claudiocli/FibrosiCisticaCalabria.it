@@ -35,7 +35,7 @@
 </div>
 <style lang="scss">
 	div.container	{
-		margin: 2em;
+		min-height: calc(100vh - 29.2vh);
 	}
 	h2, h3, h4, em	{
 		color: #016bb7;

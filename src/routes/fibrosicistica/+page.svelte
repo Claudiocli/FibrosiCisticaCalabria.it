@@ -123,6 +123,9 @@
 	Contenuti realizzati a cura della Prof.ssa Serena Quattrucci, Consulente Scientifico LIFC, ultimo aggiornamento Settembre 2017.
 </p>
 <style lang="scss">
+	.spot	{
+		z-index: -1;
+	}
 	p	{
 		margin: 2em 2em;
 	}
