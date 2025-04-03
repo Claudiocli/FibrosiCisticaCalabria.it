@@ -29,6 +29,9 @@ import FacebookPosts from '../components/FacebookPosts.vue';
 </script>
 
 <style scoped lang="scss">
+  .news  {
+    height: calc(100vh - var(--footer-height, 18em));
+  }
 	.follow {
 		display: flex;
 		flex-direction: row;
@@ -44,12 +47,36 @@ import FacebookPosts from '../components/FacebookPosts.vue';
 		text-align: center;
 		display: flex;
 		flex-direction: column;
-		min-height: calc(100vh - 29.2vh);
+		min-height: calc(100vh - var(--footer-height, 29.2vh));
 	}
 	a {
 		text-decoration: none;
 	}
 	a:visited {
 		color: #000;
+	}
+  @media (max-width: 768px) {
+		.follow {
+			flex-direction: column;
+			gap: 2em;
+		}
+		.follow img {
+			width: 3.5em;
+			height: 3.5em;
+		}
+    .news {
+      height: calc(100vh - var(--footer-height, 20.1vh));
+    }
+	}
+
+	@media (max-width: 480px) {
+		.news {
+			font-size: 0.9rem;
+		}
+
+		.follow img {
+			width: 3em;
+			height: 3em;
+		}
 	}
 </style>

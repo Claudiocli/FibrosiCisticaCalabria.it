@@ -10,23 +10,21 @@
       </p>
     </div>
 </template>
-  
+
 <script lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
   const footerRef = ref<HTMLElement | null>(null);
   const footerHeight = ref<number>(0);
-  onMounted(() => {
-    if (footerRef.value) {
-      footerHeight.value = footerRef.value.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--footer-height', footerHeight.value + 'px');
-    }
-  });
+  if (footerRef.value) {
+    footerHeight.value = footerRef.value.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--footer-height', footerHeight.value + 'px');
+  }
   export default {
     name: 'FooterItem'
   }
 </script>
-  
+
 <style lang="scss" scoped>
   p.author {
     position: relative;
@@ -52,7 +50,7 @@ import { onMounted, ref } from 'vue';
     justify-content: center;
     display: flex;
     flex-direction: row;
-    position: relative;
+    position: static;
     bottom: 0;
     right: 0;
     text-align: start;

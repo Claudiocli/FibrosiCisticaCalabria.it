@@ -32,13 +32,13 @@
       </span>
     </div>
   </template>
-  
+
   <script lang="ts">
   export default {
     name: 'MapInfo'
   }
   </script>
-  
+
   <style scoped lang="scss">
   #map {
     width: fit-content;
@@ -48,7 +48,7 @@
     background-color: azure;
     display: flex;
     flex-flow: row;
-    height: calc(100vh - 29.2vh);
+    height: calc(100vh - var(--footer-height, 29.2vh));
     gap: 10vw;
   }
   #info {
@@ -65,4 +65,33 @@
     color: #e47129;
     text-decoration: none;
   }
+  @media (max-width: 768px) {
+    .box  {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 0;
+      height: calc(100vh - var(--footer-height, 20.1vh));
+    }
+    #map  {
+      position: relative;
+      margin: 0;
+      margin-top: 2vh;
+      flex: 2;
+    }
+    #info {
+      flex: 3.5;
+    }
+  }
+  @media (max-width: 480px) {
+    .box  {
+      height: auto;
+      justify-content: flex-end;
+    }
+		#map  {
+      position: relative;
+      flex: 1;
+      scale: .65;
+    }
+	}
   </style>

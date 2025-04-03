@@ -9,7 +9,7 @@
       </p>
       <h3>Scegli una delle modalità di donazione</h3>
       <h4>Tramite Paypal o con Carta di Credito</h4>
-  
+
       <h4>Tramite Bonifico bancario</h4>
       <div class="bonifici">
         <p title="copy Iban BCC del Catanzarese to clipboard" @click="copy(BCCC)">
@@ -25,7 +25,7 @@
       </div>
     </div>
   </template>
-  
+
   <script lang="ts">
   export default {
     data() {
@@ -41,7 +41,7 @@
     }
   };
   </script>
-  
+
   <style lang="scss" scoped>
   .container {
     min-height: calc(100vh - var(--footer-height, 19.3em));
@@ -51,5 +51,10 @@
   }
   .bonifici > p {
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .container  {
+      min-height: calc(100vh - var(--footer-height, 21.2vh));
+    }
   }
   </style>

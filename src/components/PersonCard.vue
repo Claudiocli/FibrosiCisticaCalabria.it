@@ -39,55 +39,66 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.box {
-    border: 4px solid #016bb7;
-    border-radius: 40px;
-    max-width: 40%;
-    margin: 2em;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 1em;
-}
-.left {
-    animation: slideinl 1s;
-}
-.right {
-    position: relative;
-    left: calc(55% - 0.5em);
-    animation: slideinr 1s;
-}
-.profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 2em;
-}
-.info {
-    max-width: 60%;
-}
-h3 {
-    font-size: 1.6em;
-}
-em {
-    font-size: 1.2em;
-    font-weight: 700;
-}
-@keyframes slideinl {
-    from {
-        margin-left: -100vw;
+  .box {
+      border: 4px solid #016bb7;
+      border-radius: 40px;
+      max-width: 40%;
+      margin: 2em;
+      display: flex;
+      align-items: center;
+  }
+  .left {
+      animation: slideinl 1s;
+  }
+  .right {
+      position: relative;
+      left: calc(55% - 0.5em);
+      animation: slideinr 1s;
+  }
+  .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 2em;
+  }
+  .info {
+      max-width: 60%;
+  }
+  h3 {
+      font-size: 1.6em;
+  }
+  em {
+      font-size: 1.2em;
+      font-weight: 700;
+  }
+  @keyframes slideinl {
+      from {
+          margin-left: -100vw;
+      }
+      to {
+          margin-left: 0;
+      }
+  }
+  @keyframes slideinr {
+      from {
+          margin-left: 100vw;
+      }
+      to {
+          margin-left: 0;
+      }
+  }
+  @media (max-width: 768px) {
+    .box  {
+      max-width: 50vw;
     }
-    to {
-        margin-left: 0;
+    .left {
+      animation: slideinl 1s;
     }
-}
-@keyframes slideinr {
-    from {
-        margin-left: 100vw;
+    .right {
+      position: relative;
+      left: calc(55vw - 20vw);
+      animation: slideinr 1s;
     }
-    to {
-        margin-left: 0;
-    }
-}
+  }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
       <h2 id="la-fibrosi-cistica">Cos'è la Fibrosi Cistica</h2>
       <div>
         <p class="intro">
@@ -22,18 +22,18 @@
         sull’aspetto fisico né alla nascita né in seguito nel corso della vita, per questo viene definita
         la “malattia invisibile”.
       </p>
-      
+
       <div class="box" v-for="(section, index) in sections" :key="index">
         <h3 :id="section.id">{{ section.title }}</h3>
         <p v-html="section.content"></p>
       </div>
-      
+
       <p class="credits">
         Contenuti realizzati a cura della Prof.ssa Serena Quattrucci, Consulente Scientifico LIFC, ultimo aggiornamento Settembre 2017.
       </p>
     </div>
   </template>
-  
+
   <script lang="ts">
   export default {
     data() {
@@ -74,7 +74,7 @@
     }
   };
   </script>
-  
+
   <style scoped>
   .spot {
     z-index: -1;
@@ -122,4 +122,9 @@
   em {
     color: #016bb7;
   }
-  </style>  
+  @media (max-width: 768px) {
+    .container  {
+      height: calc(100vh - var(--footer-height, 21.6vh));
+    }
+  }
+  </style>

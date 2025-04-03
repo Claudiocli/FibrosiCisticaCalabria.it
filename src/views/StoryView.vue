@@ -32,22 +32,27 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'InfoLfccComponent',
-}
+  export default {
+    name: 'InfoLfccComponent',
+  }
 </script>
 
 <style lang="scss" scoped>
-.info-lfcc-container {
-  min-height: calc(100vh - var(--footer-height, 20.05em));
-}
-p {
-  font-family: Nunito;
-  margin-top: 2em;
-  margin-left: 2em;
-  margin-right: 50%;
-}
-em {
-  color: #016bb7;
-}
+  .info-lfcc-container {
+    min-height: calc(100vh - var(--footer-height, 20.05em));
+  }
+  p {
+    font-family: Nunito;
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 50%;
+  }
+  em {
+    color: #016bb7;
+  }
+  @media (max-width: 768px) {
+    .info-lfcc-container  {
+      min-height: calc(100vh - var(--footer-height, 21.8vh));
+    }
+  }
 </style>
