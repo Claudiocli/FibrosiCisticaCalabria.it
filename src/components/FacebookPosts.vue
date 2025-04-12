@@ -11,17 +11,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   setup() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const posts = ref<any[]>([]);
 
-    onMounted(async () => {
-      const res = await fetch('/api/facebook-posts');
-      posts.value = await res.json();
-    });
+    const res = fetch('/api/facebook-posts.php');
+    res.then(r => r.json().then(j => posts.value = j)
+                          .catch(e => console.error(`Error ${e}`)))
+        .catch(e => console.error(`Error ${e}`));
 
     return {
       posts
