@@ -1,10 +1,10 @@
 <?php
 $config = require __DIR__ . '/conf.php';
 
-$pageId       = $config['FB_PAGE_ID'];
-$accessToken  = $config['FB_ACCESS_TOKEN'];
-$cacheFile    = $config['CACHE_FILE'];
-$cacheDuration = $config['CACHE_DURATION'];
+$pageId         = $config['FB_PAGE_ID'];
+$accessToken    = $config['FB_ACCESS_TOKEN'];
+$cacheFile      = $config['CACHE_FILE'];
+$cacheDuration  = $config['CACHE_DURATION'];
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
@@ -15,11 +15,29 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheDuration)
 }
 
 $url = "https://graph.facebook.com/me/posts?fields=message,full_picture,permalink_url&access_token={$accessToken}";
+$ch = curl_init($url);
 
-$fbResponse = file_get_contents($url);
-if ($fbResponse === false) {
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+
+$fbResponse = curl_exec($ch);
+
+if (curl_errno($ch)) {
+    error_log("cURL error: " . curl_error($ch));
     http_response_code(500);
     echo json_encode(['error' => 'Error while fetching posts from Facebook']);
+    curl_close($ch);
+    exit;
+}
+
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+if ($httpCode !== 200) {
+    error_log("Facebook API HTTP Error $httpCode: $fbResponse");
+    http_response_code(500);
+    echo json_encode(['error' => 'Error in fetch response']);
     exit;
 }
 
