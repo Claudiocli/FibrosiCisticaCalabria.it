@@ -101,4 +101,29 @@ export default defineComponent({
       animation: slideinr 1s;
     }
   }
+  @media (max-width: 426px) {
+    .profile-img {
+        width: 80px;
+        height: 80px;
+        margin: .4em;
+    }
+    .box  {
+      border: 4px solid #016bb7;
+      border-radius: 40px;
+      margin: 1em;
+
+      font-size: medium;
+    }
+    .info {
+      max-width: 2em;
+    }
+    .left {
+      animation: slideinl 1s;
+    }
+    .right {
+      position: relative;
+      left: calc(55vw - 20vw);
+      animation: slideinr 1s;
+    }
+  }
 </style>
