@@ -122,9 +122,4 @@
   em {
     color: #016bb7;
   }
-  @media (max-width: 768px) {
-    .container  {
-      height: calc(100vh - var(--footer-height, 21.6vh));
-    }
-  }
   </style>

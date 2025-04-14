@@ -72,6 +72,7 @@
       align-items: center;
       gap: 0;
       height: calc(100vh - var(--footer-height, 20.1vh));
+      padding-top: 54vh;
     }
     #map  {
       position: relative;
@@ -87,6 +88,7 @@
     .box  {
       height: auto;
       justify-content: flex-end;
+      padding-top: revert;
     }
 		#map  {
       position: relative;

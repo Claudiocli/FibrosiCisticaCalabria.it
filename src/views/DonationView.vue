@@ -116,5 +116,21 @@
     .container  {
       min-height: calc(100vh - var(--footer-height, 21.2vh));
     }
+    .bonifici-container {
+      flex-direction: column;
+    }
+    .bonifici {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .cpm  {
+      top: revert;
+      right: revert;
+      align-self: center;
+      max-width: revert;
+      > img {
+        max-width: 80vw;
+      }
+    }
   }
   </style>
