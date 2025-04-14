@@ -1,11 +1,10 @@
 <template>
   <section class="posts">
     <article v-for="post in posts" :key="post.id">
-      <img :src="post.full_picture" alt="Facebook Post Image" />
-      <div>
-        <h3>{{ post.message }}</h3>
-        <a :href="post.permalink_url" target="_blank">Leggi di più</a>
-      </div>
+      <a :href="post.permalink_url" target="_blank">
+        <img :src="post.full_picture" alt="Facebook Post Image" />
+        <h4>{{ post.message }}</h4>
+      </a>
     </article>
   </section>
 </template>
@@ -32,19 +31,29 @@ export default defineComponent({
 
 <style scoped>
 .posts {
+  width: 100vw;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 8vh 0;
 }
 article {
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
   max-width: 300px;
+  max-height: 320px;
+}
+h4  {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  max-height: 100%;
+  object-fit: cover;
 }
 </style>

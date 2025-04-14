@@ -14,7 +14,7 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheDuration)
     exit;
 }
 
-$url = "https://graph.facebook.com/me/posts?fields=message,full_picture,permalink_url&access_token={$accessToken}";
+$url = "https://graph.facebook.com/v22.0/me/feed?fields=message,full_picture,permalink_url&limit=20&access_token={$accessToken}";
 $ch = curl_init($url);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -49,7 +49,13 @@ if (!isset($responseData['data'])) {
     exit;
 }
 
-$jsonOutput = json_encode($responseData['data']);
+$postsWithPicture = array_filter($responseData['data'], function($post) {
+    return isset($post['full_picture']);
+});
+
+$topFour = array_slice(array_values($postsWithPicture), 0, 4);
+
+$jsonOutput = json_encode($topFour);
 
 file_put_contents($cacheFile, $jsonOutput);
 

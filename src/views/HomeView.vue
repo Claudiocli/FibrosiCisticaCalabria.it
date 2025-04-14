@@ -1,8 +1,8 @@
 <template>
 	<div class="news">
 		<h1>News</h1>
-		<h2>Ultimi Post da Facebook</h2>
-		<FacebookPosts />
+    <h2>Ultimi Post da Facebook</h2>
+    <FacebookPosts />
 		<h3>Resta aggiornato sui social della Lega Italiana Fibrosi Cistica Calabria</h3>
 		<div class="follow">
 			<a href="https://www.facebook.com/profile.php?id=61573542536873">
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-	import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 import FacebookPosts from '../components/FacebookPosts.vue';
   export default defineComponent({
     name: 'HomeView',
@@ -29,9 +29,6 @@ import FacebookPosts from '../components/FacebookPosts.vue';
 </script>
 
 <style scoped lang="scss">
-  .news  {
-    height: calc(100vh - var(--footer-height, 18em));
-  }
 	.follow {
 		display: flex;
 		flex-direction: row;
@@ -45,9 +42,8 @@ import FacebookPosts from '../components/FacebookPosts.vue';
 	}
 	.news {
 		text-align: center;
-		display: flex;
 		flex-direction: column;
-		min-height: calc(100vh - var(--footer-height, 29.2vh));
+		min-height: calc(100vh - var(--footer-height, 24.4vh));
 	}
 	a {
 		text-decoration: none;
@@ -55,6 +51,9 @@ import FacebookPosts from '../components/FacebookPosts.vue';
 	a:visited {
 		color: #000;
 	}
+  h1  {
+    margin: .5em;
+  }
   @media (max-width: 768px) {
 		.follow {
 			flex-direction: column;
