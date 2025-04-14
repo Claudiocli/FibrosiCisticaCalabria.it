@@ -39,7 +39,7 @@
 
 <style lang="scss" scoped>
   .info-lfcc-container {
-    min-height: calc(100vh - var(--footer-height, 20.05em));
+    min-height: calc(100vh - var(--footer-height, 16.1em));
   }
   p {
     font-family: Nunito;

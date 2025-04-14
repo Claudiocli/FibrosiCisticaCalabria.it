@@ -48,7 +48,7 @@
     background-color: azure;
     display: flex;
     flex-flow: row;
-    height: calc(100vh - var(--footer-height, 29.2vh));
+    height: calc(100vh - var(--footer-height, 22.8vh));
     gap: 10vw;
   }
   #info {

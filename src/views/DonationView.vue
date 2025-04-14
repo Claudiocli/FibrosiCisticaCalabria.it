@@ -60,9 +60,10 @@
 
   <style lang="scss" scoped>
   .container {
-    min-height: calc(100vh - var(--footer-height, 19.3em));
+    min-height: calc(100vh - var(--footer-height, 14.1em));
   }
   h2, h3, h4, em {
+    margin: 1em;
     color: #016bb7;
   }
   h2, h3, h4, p {
