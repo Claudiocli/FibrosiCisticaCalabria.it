@@ -14,7 +14,7 @@ if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $cacheDuration)
     exit;
 }
 
-$url = "https://graph.facebook.com/v22.0/me/feed?fields=message,full_picture,permalink_url&limit=20&access_token={$accessToken}";
+$url = "https://graph.facebook.com/v25.0/me/feed?fields=message,full_picture,permalink_url&limit=20&access_token={$accessToken}";
 $ch = curl_init($url);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
